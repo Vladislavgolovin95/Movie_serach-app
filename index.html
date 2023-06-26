@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>Document</title>
+  <title>Поиск фильмов</title>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  
+<body id="body">
+  <h1>🔎 Поиск фильмов 🎬</h1>
+  <div class="name-movie">
+    <input 
+      id="inputNameMovie"
+      class="name-movie__input" 
+      type="text"
+      placeholder="Название фильма" 
+      required>
+    <button id="serchBtn" class="name-movie__btn">Искать</button>
+  </div>
+  <div class="movies">
+    <ul id="listMovies" class="movies__list"></ul>
+  </div>
   <script src="index.js"></script>
 </body>
 </html>
