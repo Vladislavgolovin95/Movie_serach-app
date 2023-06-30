@@ -11,19 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>🔎 Movie search 🎬</h1>
-  <div class="name-movie">
-    <input 
-      id="inputNameMovie"
-      class="name-movie__input" 
-      type="text"
-      placeholder="Enter movie name ..." 
-      required>
-    <button id="serchBtn" class="name-movie__btn">Search</button>
+  <div class="movie">
+    <a class="movie__btn" href="index.html"><- Back to search</a>
+    <div id="movie-card" class="movie__card"></div>
   </div>
-  <div class="movies">
-    <ul id="listMovies" class="movies__list"></ul>
-  </div>
-  <script src="index.js"></script>
+  
+  <script src="movie.js"></script>
 </body>
 </html>

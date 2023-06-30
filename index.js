@@ -4,20 +4,29 @@ const nameMovieNode = document.getElementById('inputNameMovie');
 const listMoviesNode = document.getElementById('listMovies');
 const serchBtnNode = document.getElementById('serchBtn');
 
+
 function searchMovie () {
   const nameMovie = nameMovieNode.value;
-    if (nameMovie === '') {
-      alert(INPUT_ERROR_MESSAGE);
-    }
-  const movies = fetch(`https://www.omdbapi.com/?s=${nameMovie}&apikey=b9476727`)
-    .then(response => response.json())
+  if (nameMovie === '') {
+    alert(INPUT_ERROR_MESSAGE);
+  }
+  fetch(`https://www.omdbapi.com/?s=${nameMovie}&apikey=b9476727`)
 
-    .then(data => {
-      let movies = data.Search;
+    .then((response) => {
+      
+      if (!response.ok) {
+        return;
+      } 
+      return response.json();
+    })
+
+    .then((data) => {
+      movies = data.Search;
+      console.log(movies)
       let html = '';
 
-      movies.forEach(e => {
-        let movie = e;
+      movies.forEach(element => {
+        let movie = element;
         html += `
           <li class='item' id='${movie.imdbID}'>
             <div class='item-poster'>
@@ -44,9 +53,7 @@ serchBtnNode.addEventListener('click', function() {
   clearInput();
 });
 
-listMoviesNode.addEventListener('click', (e) => {
-  const targetItem = e.target;
-  if (targetItem.id) {
-    console.log(targetItem)
-  }
-})
+listMoviesNode.addEventListener("click", function(event) {
+  let target = event.target.closest('.item')
+  window.location.href = `movie.html?i=${target.id}`
+});
