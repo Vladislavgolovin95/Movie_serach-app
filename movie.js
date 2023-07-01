@@ -1,4 +1,6 @@
 const movieCardNode = document.getElementById('movie-card');
+const backBtn = document.getElementById('backBtn');
+
 const params = new URLSearchParams(location.search);
 const movieID = params.get('i');
 
@@ -52,3 +54,7 @@ function renderCardMovie(movie) {
     <p class="movie-card__intro">${movie.Plot}</p>
   `
 }
+
+backBtn.addEventListener('click', function() {
+  history.back();
+})
