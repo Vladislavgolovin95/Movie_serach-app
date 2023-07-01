@@ -84,6 +84,11 @@ h1 {
   font-size: 30px;
 }
 
+.error {
+  font-size: 40px;
+  line-height: normal;
+}
+
 /* Стили карточки фильма */
 
 .movie {
