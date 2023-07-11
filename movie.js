@@ -4,8 +4,6 @@ const backBtn = document.getElementById('backBtn');
 const params = new URLSearchParams(location.search);
 const movieID = params.get('i');
 
-console.log(movieID)
-
 fetch(`https://www.omdbapi.com/?i=${movieID}&apikey=b9476727`)
   .then((response) => { 
     if (!response.ok) { 
